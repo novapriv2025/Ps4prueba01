@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "Demo Homebrew",
+      "version": "1.0",
+      "pkg_url": "https://example.com/demo.pkg",
+      "icon": "https://via.placeholder.com/100",
+      "description": "Demo de instalación de prueba"
+    }
+  ]
+}
