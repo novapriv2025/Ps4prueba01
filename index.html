@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prueba Tienda PS4</title>
-  <style>
-    body { font-family: sans-serif; background:#222; color:#fff; }
-    .app { margin:10px; padding:10px; border:1px solid #555; }
-    img { width:100px; height:100px; }
-    button { padding:5px 10px; margin-top:5px; }
-  </style>
+<meta charset="utf-8">
+<title>Mi Tienda PS4</title>
+
+<style>
+body {
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+.app {
+  border: 1px solid #555;
+  padding: 10px;
+  margin: 10px;
+}
+button {
+  padding: 10px;
+  background: #0a84ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Prueba Tienda PS4</h1>
-  <div id="catalogo"></div>
 
-  <script>
-    fetch('catalogo.json')
-      .then(res => res.json())
-      .then(data => {
-        const div = document.getElementById('catalogo');
-        data.apps.forEach(app => {
-          const appDiv = document.createElement('div');
-          appDiv.className = 'app';
-          appDiv.innerHTML = `
-            <img src="${app.icon}" />
-            <h3>${app.name}</h3>
-            <p>${app.description}</p>
-            <button onclick="instalar('${app.pkg_url}')">Instalar</button>
-          `;
-          div.appendChild(appDiv);
-        });
-      });
+<h1>Mi Tienda PS4</h1>
 
-    function instalar(url) {
-      alert('Aquí se dispararía el Package Installer con: ' + url);
-      // En tu PS4, aquí reemplazarías el alert con:
-      // window.location.href = "ps4pkginstaller://install?url=" + encodeURIComponent(url);
-    }
-  </script>
+<div class="app">
+  <h2>Demo Homebrew</h2>
+  <p>Prueba de instalación</p>
+  <button onclick="instalar()">Descargar</button>
+</div>
+
+<script>
+function instalar() {
+  alert("Botón funcionando en PS4");
+  // Aquí luego irá el handler real
+  // window.location.href = "HANDLER_DE_PACKAGE_INSTALLER";
+}
+</script>
+
 </body>
 </html>
